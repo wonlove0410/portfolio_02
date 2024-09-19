@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+:root {
+  --main-font: "Gothic A1", sans-serif;
+  --sub-font: "Montserrat", sans-serif;
+  --main-color: #002261;
+}
+
+body { font-family: var(--main-font) ; line-height: 1.5; font-size: 1.6rem; color: #292929; }
+
+.inner { max-width: 1440px; padding: 0 5%; margin: 0 auto; }
+
+/* header */
+#header { position: fixed; left: 0; top: 0; padding: 10px 0; z-index: 10; width: 100%; border-bottom: 1px solid #fff; }
+#header .inner { position: relative; display: flex; justify-content: space-between; align-items: center; }
+#header h1 a { display: block; }
+#header h1 a img { width: 155px; height: 35px; }
+#header h2 a .blue { display: none; position: absolute; top: 6px; left: 96px; width: 155px; height: 35px; }
+#header .gnb { display: flex; text-align: center; align-items: center; }
+#header .gnb > li { padding: 5px 0; }
+#header .gnb > li > a { display: block; padding: 10px 30px; color: #fff; font-size: 2.0rem; font-weight: 600; }
+#header .gnb > li { position: relative; }
+#header .gnb > li .depth2 { display: block; position: absolute; left: 0; width: 100%; padding: 40px 10px 0; z-index: 20; }
+#header .gnb > li .depth2 li { padding: 7px 0; }
+#header .gnb > li .depth2 li a { transition: all 0.5s; display: block; color: #fff; opacity: 0.7; }
+#header .gnb > li .depth2 li:hover a { opacity: 1; }
+#header .depth2_bg { position: absolute; left: 30%; top: 71px; width: 70%; height: 345px; background-color: #000; }
+#header.on .gnb > li > a { color: #292929; }
+#header.on { border-bottom: 1px solid #292929; }
+#header .ham { display: none; position: absolute; right: 0; top: 17px; width: 30px; height: 25px; font-size: 0; background: url(../img/main/mgnb_ham.png) no-repeat center; border: 0; cursor: pointer; }
+#header .ham.black { background: url(../img/main/mgnb_ham_b.png) no-repeat center; }
+
+@media (max-width:1063px) {
+  #header .gnb { display: none; }
+  #header .ham { display: block; padding: 0 5%; }
+}
+
+@media (max-width:435px) {
+  #header .ham { display: block; padding: 0 8%; }
+}
+
+/* mgnb */
+.mgnb_wrap { padding: 5%; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000; }
+.mgnb_wrap h2 { width: 100%; height: 100%; }
+.mgnb_wrap > img { width: 100%; height: 100%; }
+.mgnb_wrap .mgnb { width: 100%; height: 100%; }
+.mgnb_wrap .mgnb > li { position: relative; }
+.mgnb_wrap .mgnb > li img { position: absolute; right: 0; padding: 10px; cursor: pointer; }
+.mgnb_wrap .mgnb > li > a { position: relative; display: block; padding: 10px 0; margin-bottom: 10px; color: #fff; font-size: 2.0rem; font-weight: 500; }
+.mgnb_wrap .mgnb > li > a::before { position: absolute; left: -8px; top: 14px; content: ""; display: block; width: 2px; height: 19px; background: #fff; }
+.mgnb_wrap .mgnb .mdepth2 li a { display: block; color: #fff; padding: 15px 0; opacity: 0.7; }
+.mgnb_wrap .mgnb .mdepth2 li:hover a { opacity: 1; }
+.mgnb_wrap .logo_btn { display: flex; padding: 0 6px 80px 0; }
+.mgnb_wrap .logo_btn > img { width: 27px; height: 27px; cursor: pointer; }
+
+/* footer */
+#footer { padding: 70px 0; background: #2F363E; }
+#footer .inner { display: flex; justify-content: space-between; font-size: 1.4rem; }
+#footer .inner .footer_link { display: flex; gap: 30px; padding: 60px 0 30px; }
+#footer .inner .footer_link li a { color: rgba(255,255,255,0.8); }
+#footer .inner .footer_left .copy { color: rgba(255,255,255,0.5); }
+#footer .inner .mid { margin: 0 auto 0 90px; }
+#footer .inner .mid .call { font-size: 1.4rem; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+#footer .inner .mid .call span { display: block; font-family: var(--sub-font); font-size: 3.0rem; color: rgba(255,255,255,1); }
+#footer address { margin-top: 30px; font-size: 1.4rem; color: rgba(255,255,255,1); line-height: 1.8; }
+#footer select { appearance: none; padding: 0 10px; width: 200px; height: 40px; background: #2F363E url(../img/main/arrow_select.png) no-repeat right 15px center; border: 1px solid rgba(255,255,255,0.2); font-family: var(--en-font); color: rgba(255,255,255,0.5); }
+
+@media (max-width:1024px) {
+  #footer { padding: 50px 0; }
+  #footer .inner { flex-direction: column; gap: 20px; }
+  #footer .inner > div:nth-child(2) { margin: 0; }
+}
